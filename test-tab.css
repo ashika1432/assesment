@@ -1,0 +1,553 @@
+.popup-content{
+  display:flex;
+  gap:20px;
+  justify-content:space-between;
+}
+
+.popup-content img{
+  width:40%;
+}
+
+.product-details{
+  display:flex;
+  flex-direction:column;
+}
+
+.close-icon{
+  background: none;
+    color: black;
+  border:none;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.close-icon svg{
+  height:30px;
+  width:30px;
+} 
+
+#productTitle{
+  color: #575757;
+font-family: Chevin Pro;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 38px;
+  text-align:start;
+  margin-bottom:10px;
+}
+
+.productprice-comp{
+  display:flex;
+font-family: Chevin Pro;
+font-size: 24px;
+font-style: normal;
+line-height: 28px; 
+margin-bottom:20px;
+}
+
+#productcmpPrice{
+ color: #575757;
+font-weight: 300;
+line-height: 29px; 
+letter-spacing: 0.24px;
+text-decoration: line-through;
+}
+
+#productPrice{
+  color: #EE7130;
+font-weight: 600;
+line-height: 28px;
+letter-spacing: 0.16px;
+}
+
+#productvendar{
+  color: #B2B2B2;
+font-family: Chevin Pro;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 18px; 
+letter-spacing: 0.48px;
+text-decoration-line: underline;
+  text-align:start;
+  margin-bottom:30px;
+}
+
+
+.quantity-add-to-cart{
+  display:flex;
+  gap:15px;
+}
+
+.quantity-add-to-cart .testbutton{
+  width: 75%;
+}
+
+.popup .product-form__submit.button.button--full-width.button--primary{
+border-radius: 2px;
+background: #EE7130;
+  border-color:#EE7130;
+}
+
+.quantity__button[name="minus"]{
+  border-right:1px solid #E5E5E5; ;
+}
+.quantity__button[name="plus"]{
+  border-left:1px solid #E5E5E5;;
+}
+
+.close-icon-mobile{
+  display:none;
+}
+
+@media screen and (max-width:1120px){
+  .popup-content{
+    flex-direction:column;
+  }
+
+  .close-icon{
+    display:none;
+  }
+  .close-icon-mobile{
+  display:flex;
+    position:absolute;
+    right:15px;
+    z-index:4;
+}
+
+  .popup-content img {
+    width:unset;
+    position:relative;
+  }
+}
+/* Styles for the popup container */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9;
+}
+
+/* Styles for the popup content */
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+/* .popup-content button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px; */
+}
+
+button.quantity__button{
+ color: black;
+  width: fit-content;
+}
+
+.heading_tab_text.is--active .plus {
+  display: none;
+}
+
+.heading_tab_text.is--active .minus {
+  display: block;
+}
+
+.minus {
+  display: none;
+}
+
+.plus svg,
+.minus svg {
+  width: 12px;
+  height: 12px;
+  color: #575757;
+}
+
+.logo_collection {
+  display: flex;
+}
+
+.product-discription-main.subtext {
+  display: none;
+}
+
+.heading:hover + .product-discription-main.subtext {
+  display: block;
+}
+
+.heading_tab_text.is--active {
+  text-decoration: none;
+  font-weight: 700;
+  border: 1.5px solid #a7c610;
+  border-radius: 4px;
+}
+
+.collection_tab_heading {
+  background: #f7f7f7;
+}
+
+.product-card__options {
+  display: none;
+}
+.product-card__meta {
+  text-align: left;
+}
+
+.compare-at-price,
+.price__discount {
+  display: none;
+}
+
+.logo_collection p {
+  margin: 0;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+}
+
+.logo_collection {
+  background: white;
+  border-radius: 4px;
+}
+
+.collection-tabs__slideritem.collection_tab_slider {
+  border: 1px solid #e5e5e5;
+  background: #f7f7f7;
+}
+
+@media only screen and (max-width: 750px) {
+  .collection_tab_heading {
+    padding: 30px;
+  }
+
+  .product-card__meta{
+    padding:0 20px;
+  }
+
+  .collection-tabs__slideritem.collection_tab_slider{
+    margin-bottom:10px;
+  }
+
+  .product-card__button.center.button-product{
+    padding:20px 20px 0 20px;
+  }
+
+  .section-heading {
+    color: #575757;
+    text-align: center;
+    font-family: Chevin Pro;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.16px;
+    margin-bottom: 10px;
+  }
+
+  .section-subheading {
+    color: #575757;
+    text-align: center;
+    font-family: Chevin Pro;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0.48px;
+    margin-bottom: 20px;
+  }
+
+  .logo_collection p {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.32px;
+  }
+
+  .tabs {
+    width: fit-content;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+  }
+
+  .logo_collection {
+    padding: 4px 10px;
+  }
+
+  .slideheading {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.16px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .collection_tab_content {
+    padding: 0 20px;
+  }
+
+  .product-title-main {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.16px;
+    margin: 20px 0 15px 0;
+  }
+
+  .product-discription-main {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.48px;
+    margin-bottom: 15px;
+  }
+
+  .current-price.product-title {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 29px;
+    letter-spacing: 0.24px;
+   
+  }
+
+  .product-card__prices-main{
+     margin-bottom:15px;
+  }
+
+  .button.button.button--full-width.card_button{
+    color: #FFF;
+text-align: center;
+font-family: Chevin Pro;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px; 
+letter-spacing: 0.24px;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .product-card__wrapper {
+    text-align: center;
+  }
+
+  .button-product {
+    padding-bottom: 20px;
+  } 
+
+  .product-discription-main {
+    margin-bottom: 15px;
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0.48px;
+  }
+
+  .product-title-main {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.16px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+  }
+
+  .product-card__prices-main {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 29px;
+    letter-spacing: 0.24px;
+    margin-bottom: 15px;
+  }
+
+  .product-card__meta {
+    padding: 20px 20px 0 20px;
+  }
+
+  .slideheading {
+    padding: 60px 0 30px 0;
+  }
+
+  .collection_tab_content {
+    padding: 0 8%;
+  }
+
+  .section-collection_slideheading {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 38px;
+  }
+
+  .collection_tab_heading {
+    padding: 60px 0;
+  }
+
+  .logo_collection {
+    padding: 4px 10px;
+  }
+
+  .logo_collection p {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.32px;
+  }
+
+  .collection-tabs__slider {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 24.7px;
+    justify-content: space-between;
+  }
+
+  .tabs {
+    margin-top: 30px;
+    gap: 20px;
+  }
+
+  .section-heading {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 38px;
+    text-align: center;
+  }
+
+  .section-subheading {
+    color: #575757;
+    text-align: center;
+    font-family: Chevin Pro;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 29px;
+    letter-spacing: 0.24px;
+  }
+
+  .collection-tabs__slideritem.collection_tab_slider {
+    width: 31%;
+  }  
+}
+
+
+@media only screen and (max-width: 750px) {
+  .product-card__link img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .collection_tab_heading {
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+  .logo_collection img {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .logo_collection img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.container {
+  margin-top: 100px;
+}
+.collection_tab_content.is--active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  z-index: 1;
+}
+.collection_tab_contents {
+  position: relative;
+}
+.collection_tab_content {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+}
+
+.link-center {
+  padding-top: 60px;
+}
+@media screen and (min-width: 767px) and (max-width: 989px) {
+  .collection_tab_heading {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.card_button {
+  border-radius: 2px;
+  background: #ee7130;
+  color: #fff;
+  text-align: center;
+  font-family: Chevin Pro;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.24px;
+  text-align: center;
+  padding: 13px 44px;
+  margin: auto;
+}
+.product-card__prices {
+  text-align: center;
+  padding-bottom: 18px;
+}

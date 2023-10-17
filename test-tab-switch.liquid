@@ -1,0 +1,153 @@
+{{ 'test-tab.css' | asset_url | stylesheet_tag }}
+{{ 'custom.css' | asset_url | stylesheet_tag }}
+
+<div class="">
+  <div class="collection_tab_heading ">
+    {% if section.settings.section_heading != blank %}
+      <div class="section-heading">
+        {{ section.settings.section_heading }}
+      </div>
+    {% endif %}
+    {% if section.settings.section_subheading != blank %}
+      <div class="section-subheading">
+        {{ section.settings.section_subheading }}
+      </div>
+    {% endif %}
+    <div class="tabs">
+      {% for block in section.blocks %}
+        {% if block.settings.collection_heading != blank and block.settings.collection_id != blank %}
+          <div
+            class="heading_tab_text {% if forloop.first %} is--active {% endif %}"
+            data-tab="{{ block.settings.collection_heading | handleize }}-{{ block.id }}"
+          >
+            {% if block.settings.collection_image_logo != blank %}
+              <div class="logo_collection">
+                <p>{{ block.settings.collection_id.title }}</p>
+                <div class="plus">{% render 'icon-plus' %}</div>
+             <div class="minus"> {% render 'icon-minus' %}</div>
+              </div>
+            
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="collection_tab_contents">
+    {% assign product_limit = section.settings.product_limit %}
+    {%- for block in section.blocks -%}
+      <div
+        class="collection_tab_content {% if forloop.first %} is--active {% endif %}"
+        id="{{ block.settings.collection_heading | handleize }}-{{ block.id }}"
+      >
+        <div class="slideheading">
+            {% if block.settings.collection_slideheading != blank %}
+              <div class="section-collection_slideheading">
+                {{ block.settings.collection_slideheading }}
+              </div>
+            {% endif %}
+          </div>
+        <div class=" collection-tabs__slider ">
+      
+          {% if block.settings.collection_heading != blank and block.settings.collection_id != blank %}
+            {%- for product in collections[block.settings.collection_id].products limit: product_limit- %}
+              <div class="collection-tabs__slideritem  collection_tab_slider">
+                {% render 'test-tab-switch-productcard', class: '', section: block, product: product %}
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+        
+        <div class=" link-center center">
+          <a class=" button btn_view_all_mtr button--tertiary" href="{{block.settings.collection_id.url  }}"
+            >View all</a
+          >
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+<script>
+              document.querySelectorAll(".heading_tab_text").forEach((head) => {
+         head.addEventListener("click", (event) => {
+        let tabId = head.dataset.tab;
+        document.querySelectorAll(".heading_tab_text").forEach((h) =>
+          h.classList.remove("is--active"));
+        document.querySelectorAll(".collection_tab_content").forEach((c) =>
+          c.classList.remove("is--active"));
+        head.classList.add("is--active");
+        document.getElementById(tabId).classList.add('is--active');
+    });
+  });
+</script>
+
+{% schema %}
+   {
+  "name": "practice Collection",
+  "tag": "section",
+  "class": "homepage-section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading_text",
+      "label": "Heading Product"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "label": "Product limit",
+      "default": 8
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section heading",
+      "default": "Best seller"
+    },
+    {
+      "type": "text",
+      "id": "section_subheading",
+      "label": "Section heading",
+      "default": "Best seller"
+    }
+
+  ],
+  "blocks": [
+    {
+      "name": "Collection Tab",
+      "type": "collection-tab",
+      "settings": [
+        {
+          "type":"text",
+          "id":"collection_image_logo",
+          "label":"Collection logo"
+        },
+        {
+          "type": "text",
+          "id": "collection_heading",
+          "label": "Collection heading"
+        },
+          {
+          "type": "text",
+          "id": "collection_slideheading",
+          "label": "Collection slide heading"
+        },
+        {
+          "type": "collection",
+          "id": "collection_id",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "practice Collection"
+    }
+  ]
+}
+{% endschema %}

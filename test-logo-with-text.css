@@ -1,0 +1,75 @@
+.logolist-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-main p {
+  margin: unset;
+}
+
+.subtextt p {
+  margin: 0;
+}
+
+.logo-list-section__block-icon {
+  border-radius: 2px;
+  border: 1px solid #e5e5e5;
+}
+
+@media screen and (min-width: 750px) {
+  .logolist-main {
+    gap: 20px;
+  }
+
+  .text-main {
+    font-family: Chevin Pro;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 56px;
+  }
+
+  .text-main p {
+    margin: unset;
+  }
+
+  .subtextt p {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0.48px;
+  }
+
+  .subtextt {
+    padding: 10px 20% 60px 20%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .image-with-text__items {
+    padding: 20px 20px 30px 20px;
+  }
+
+  .logolist-main {
+    gap: 27px;
+  }
+
+  .subtextt p {
+    color: #575757;
+    font-family: Chevin Pro;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.48px;
+  }
+
+  .subtextt {
+    padding: 0;
+    margin-top: 10px;
+  }
+}
